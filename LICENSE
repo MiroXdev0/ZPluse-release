@@ -1,21 +1,147 @@
-MIT License
+Z+ PROPRIETARY SOFTWARE LICENSE
+Version 1.0 — November 2026
 
-Copyright (c) 2026 MiroX
+Copyright (c) 2026 Miroslav Aleksandrov. All rights reserved.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+This License governs the original Z+ programming language software and
+materials owned by Miroslav Aleksandrov, including the Z+ compiler, original
+runtime code, standard-library source code, build tools, documentation, examples,
+and associated branding (collectively, the "Z+ Materials"). It does not govern
+Third-Party Materials, as defined below.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+1. Definitions
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+"Source Code" means human-readable source, including source files, scripts,
+build definitions, and editable documentation, whether modified or not.
+
+"Compiled Binary" means machine-readable object code or an executable produced
+from the Z+ Materials, including the Z+ compiler and its runtime libraries.
+"Application Binary" means an executable or other binary artifact created by
+you using the Z+ compiler that contains your own program.
+
+"Third-Party Materials" means code, data, fonts, libraries, tools, or other
+materials not owned by Miroslav Aleksandrov and identified by their own notices
+or licenses. Third-Party Materials are governed only by their respective
+licenses, which are not replaced or restricted by this License.
+
+2. Rights reserved; limited end-user permission
+
+All rights in the Z+ Materials are reserved except for the express permissions
+below. Subject to this License, Miroslav Aleksandrov grants you a personal,
+non-exclusive, non-transferable, revocable license to:
+
+ a. install and run an unmodified, lawfully obtained Z+ Compiled Binary for
+    your own use;
+ b. write, compile, run, and internally use programs of your own authorship
+    with Z+; and
+ c. redistribute an Application Binary you created, subject to Section 4.
+
+This permission does not transfer ownership of the compiler, its source, or
+any other Z+ Material. You retain the rights you hold in your own original
+program code, subject to third-party components, this License, and applicable
+law.
+
+3. Source Code restrictions
+
+Without prior written permission from Miroslav Aleksandrov, you may not:
+
+ a. reproduce, publish, distribute, sell, sublicense, or make available any
+    Z+ Source Code, in whole or in substantial part;
+ b. modify, adapt, translate, or create a derivative work of Z+ Source Code,
+    or publish or distribute such modified source or derivative work;
+ c. sublicense, rent, lease, or otherwise transfer rights in Z+ Source Code;
+ d. use Z+ Source Code or Z+ Compiled Binaries to provide a competing hosted
+    compiler service or to commercially exploit the Z+ implementation itself;
+    or
+ e. remove or misrepresent copyright, authorship, ownership, or license
+    notices, or claim ownership of the original Z+ Materials.
+
+These restrictions do not apply to Third-Party Materials, your independently
+written programs, or rights that applicable law does not permit this License
+to restrict.
+
+4. Application Binary redistribution
+
+You may distribute an Application Binary you created, including for commercial
+purposes, if:
+
+ a. the Application Binary is your own program and does not include or expose
+    Z+ Source Code or a substantial part of the Z+ compiler;
+ b. each included Z+ runtime component is an unmodified, lawfully obtained
+    Compiled Binary distributed only as needed to run that Application Binary;
+ c. you include the applicable Z+ copyright and this License with the
+    distribution, and identify the Z+ runtime as a separate component;
+ d. you include and comply with all applicable Third-Party Materials notices
+    and licenses; and
+ e. you do not suggest that Miroslav Aleksandrov endorses or is responsible
+    for your Application Binary.
+
+This section does not permit redistribution of the Z+ compiler, Z+ development
+tools, their installer, or Z+ Source Code. Written permission is required for
+those distributions.
+
+5. Reverse engineering
+
+You may not reverse engineer, decompile, disassemble, or otherwise attempt to
+derive the source code or internal implementation of Z+ Compiled Binaries,
+except to the extent that a restriction of this kind is prohibited by
+applicable mandatory law or the activity is expressly permitted by that law.
+Where applicable law grants a non-waivable right, this License does not remove
+or limit that right.
+
+6. No transfer or sublicensing
+
+Except for the limited Application Binary distribution permission in Section
+4, you may not sublicense, assign, transfer, or grant others rights in the
+Z+ Materials. No right is granted by implication, estoppel, or otherwise.
+
+7. Term and termination
+
+This License is effective while you exercise a permission granted here. A
+material breach terminates the affected permission to the extent permitted by
+applicable law. Termination does not affect rights that applicable law makes
+non-terminable or rights in Third-Party Materials. Upon termination, stop the
+use that is outside the permissions granted by this License.
+
+8. Warranty disclaimer
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE Z+ MATERIALS ARE
+PROVIDED "AS IS" AND "AS AVAILABLE", WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, WHETHER EXPRESS, IMPLIED, OR STATUTORY, INCLUDING WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, NON-INFRINGEMENT,
+ACCURACY, OR UNINTERRUPTED OPERATION. YOU ARE RESPONSIBLE FOR DETERMINING
+WHETHER THE SOFTWARE IS SUITABLE FOR YOUR USE AND FOR BACKING UP YOUR DATA.
+
+9. Limitation of liability
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, MIROSLAV ALEKSANDROV WILL
+NOT BE LIABLE FOR INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, PUNITIVE, OR
+CONSEQUENTIAL LOSS, OR FOR LOSS OF PROFITS, DATA, GOODWILL, OR BUSINESS
+INTERRUPTION, ARISING OUT OF OR RELATING TO THE Z+ MATERIALS OR THIS LICENSE.
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE TOTAL LIABILITY OF
+MIROSLAV ALEKSANDROV FOR ALL CLAIMS RELATING TO THE Z+ MATERIALS OR THIS
+LICENSE WILL NOT EXCEED THE AMOUNT YOU PAID SPECIFICALLY TO OBTAIN THE
+AFFECTED Z+ MATERIALS DURING THE TWELVE MONTHS BEFORE THE EVENT GIVING RISE
+TO THE CLAIM, OR, IF YOU PAID NOTHING, EUR 10.
+
+Nothing in this License excludes or limits liability, remedies, or rights that
+cannot lawfully be excluded or limited, including liability for intentional
+misconduct where such limitation is prohibited.
+
+10. General terms
+
+This License is not legal advice and does not displace mandatory consumer or
+other protections under applicable law. If any provision is unenforceable, it
+will be limited only to the minimum extent necessary; the remaining provisions
+remain in effect. A failure to enforce a provision is not a waiver. Any
+permission not expressly granted is reserved.
+
+11. Copyright and ownership notice
+
+Z+ and the Z+ Materials: Copyright (c) 2026 Miroslav Aleksandrov.
+All rights reserved, except for the limited permissions expressly stated in
+this License.
+
+Third-Party Materials remain the property of their respective authors and are
+licensed under their own accompanying terms. This License does not claim
+ownership of or replace any third-party license.
