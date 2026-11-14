@@ -1,135 +1,114 @@
-# Z+
+# Z+ Releases
 
-**Съвременен програмен език, създаден за производителност, гъвкавост и удобство за разработчиците.**
+**Official releases and downloadable builds of the Z+ programming language.**
 
-Z+ е език за програмиране с общо предназначение, който разполага със собствен компилатор, интерпретатор, native backend, стандартна библиотека и система за изграждане на проекти.
+Z+ is a programming language designed to make programming approachable while providing access to more advanced language features, libraries, and native execution.
 
-Това хранилище съдържа официалните компилирани версии на Z+. То е предназначено за потребители, които искат да използват Z+, без да се налага сами да компилират неговия компилатор.
+This repository contains official compiled releases of Z+. It is separate from the main development source code.
 
-## Възможности
+## Downloads
 
-- **Собствен компилатор:** Специално разработен компилатор за Z+.
-- **Native компилация:** Компилиране на Z+ програми до изпълними файлове.
-- **Интерпретатор:** Изпълнение на програми без необходимост от native компилация.
-- **ZBuild:** Система за изграждане и пакетиране на проекти.
-- **Стандартна библиотека:** Вградени функционалности за математика, колекции, файлове, низове, време, мрежи, графика и други.
-- **Разширяема архитектура:** Възможност за развитие на езика и неговата екосистема.
-- **Четим синтаксис:** Функции, структурирани контролни блокове и изрични завършващи конструкции.
+**Latest stable release:** [View Releases](https://github.com/MiroXdev0/ZPluse-release/releases/latest)
 
-## Изтегляне
+Download the installer or other available assets from the corresponding GitHub Release.
 
-Посетете страницата [Releases](../../releases), за да намерите последната налична версия.
+Each release includes its own version tag, release notes, and available download files.
 
-В зависимост от конкретното издание пакетът може да съдържа:
+## Versioning
 
-- Z+ компилатор.
-- ZBuild.
-- Необходими runtime библиотеки.
-- Стандартна библиотека.
-- Конфигурационни и ресурсни файлове.
-- Документация.
-- Примерни програми.
-- Windows инсталатор или portable версия.
+Z+ uses semantic versioning:
 
-Изтегляйте целия пакет на съответното издание, а не отделни изпълними файлове.
+`MAJOR.MINOR.PATCH`
 
-## Инсталация
+For example:
 
-### Windows — Portable версия
+- `1.1.5` - Current release
+- `1.1.4` - Previous release
+- `1.1.2` - Older release
 
-1. Изтеглете последната Windows версия.
-2. Разархивирайте пакета в избрана от вас директория.
-3. Отворете директорията на Z+.
-4. Стартирайте `setup-path.bat`, за да добавите Z+ към PATH на текущия потребител.
-5. Отворете нов терминал.
+Git tags use the `v` prefix:
 
-Проверете инсталацията:
+- `v1.1.5`
+- `v1.1.4`
+- `v1.1.2`
+
+Older releases remain available so users can access previous versions when needed.
+
+## Installation
+
+For Windows:
+
+1. Open the [Releases page](https://github.com/MiroXdev0/ZPluse-release/releases).
+2. Select the version you want.
+3. Download the Windows installer.
+4. Run the installer and follow its instructions.
+5. Open a terminal and verify the installation:
 
 ```powershell
 zp --version
+```
+
+If the release includes ZBuild, you can also check it with:
+
+```powershell
 zbuild --version
 ```
 
-Ако не желаете да променяте PATH, можете да стартирате изпълнимите файлове директно от директорията на Z+.
+Check the individual release notes for platform-specific instructions and included components.
 
-### Windows — Инсталатор
+## Verifying Downloads
 
-Ако изданието включва `setup.exe`, можете да го използвате за инсталиране на Z+ чрез графичния инсталатор.
+Releases may include SHA-256 checksum files and a release manifest.
 
-Следвайте стъпките на инсталационния помощник и проверете инсталацията след приключването ѝ.
-
-## Първа програма на Z+
-
-Създайте файл с име `main.zp`:
-
-```zp
-fn greet(name: string) {
-    print("Hello, " + name)
-} end fn
-
-start {
-    greet("World")
-} stop
-```
-
-Компилирайте и стартирайте програмата чрез Z+ компилатора.
+To calculate a file's SHA-256 hash on Windows:
 
 ```powershell
-zp main.zp
+Get-FileHash .\ZPlus-1.1.5-Setup.exe -Algorithm SHA256
 ```
 
-За допълнителни команди и параметри проверете документацията към съответното издание.
+Compare the resulting hash with the value published in the corresponding release's checksum file.
 
-## ZBuild
+Only download Z+ from this repository or another explicitly linked official Z+ distribution channel.
 
-ZBuild е официалната система за изграждане на проекти за Z+.
+## Security and Antivirus Notices
 
-Тя предоставя инструменти за управление на проекти, компилация и пакетиране, като използва Z+ компилатора за обработка на програмния код.
+Some security products may flag unfamiliar or unsigned executables.
 
-Примерни команди:
+The Windows installer and binaries may be distributed without an Authenticode signature when a trusted code-signing certificate is unavailable.
 
-```powershell
-zbuild build --release
-zbuild package --release
-```
+An antivirus detection is not automatically proof of malware, but it should not be ignored.
 
-За конфигурация на проектите и всички поддържани команди разгледайте документацията на ZBuild.
+If you encounter a detection:
 
-## Документация
+- Record the antivirus product and exact detection name.
+- Identify which downloaded file triggered it.
+- Report the result through the repository's Issues page.
+- Do not disable antivirus protection simply to install Z+.
 
-Документацията и примерните програми са включени в пакета на съответното издание.
+No antivirus vendor clearance is claimed unless explicitly documented.
 
-За допълнителна информация посетете официалния сайт на Z+, когато е наличен.
+## Project Links
 
-## Версии
+- **Website:** https://zpluse.vercel.app/
+- **Releases:** https://github.com/MiroXdev0/ZPluse-release/releases
+- **Source and development:** https://github.com/MiroXdev0
 
-Z+ използва система за номериране на версиите.
+## Reporting Issues
 
-Всяко официално издание трябва да съдържа своя номер на версията и информация за направените промени.
+For release-related problems, open an issue and include:
 
-За корекции, подобрения и нови функционалности посетете страницата [Releases](../../releases).
+- Z+ version
+- Operating system and architecture
+- Downloaded filename
+- Error message or antivirus detection name
+- Steps to reproduce the problem
 
-## Докладване на проблеми
+Please avoid posting passwords, private tokens, or other sensitive information.
 
-Открили сте проблем?
+## License
 
-Създайте GitHub Issue и включете следната информация:
-
-- Версия на Z+.
-- Операционна система.
-- Командата или програмата, при която възниква проблемът.
-- Очаквано поведение.
-- Реално поведение.
-- Съобщения за грешки или съответните логове.
-
-При проблеми с компилатора е препоръчително да приложите минимален пример, чрез който грешката може да бъде възпроизведена.
-
-## Лиценз
-
-Z+ се разпространява съгласно лиценза, включен във всяко официално издание.
-
-Моля, запознайте се с лицензионните условия преди използване, промяна или повторно разпространение на софтуера.
+Licensing terms are defined by the Z+ project and the license files included with each applicable distribution.
 
 ---
 
-**Z+ — Създаден, за да предостави на разработчиците още един начин за създаване на софтуер.**
+**Z+ is built by Miro.**
