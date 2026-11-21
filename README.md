@@ -22,15 +22,15 @@ Z+ uses semantic versioning:
 
 For example:
 
-- `1.1.5` - Current release
-- `1.1.4` - Previous release
-- `1.1.2` - Older release
+- `1.3.5` - Current release
+- `1.3.4` - Previous release
+- `1.3.2` - Older release
 
 Git tags use the `v` prefix:
 
-- `v1.1.5`
-- `v1.1.4`
-- `v1.1.2`
+- `v1.3.5`
+- `v1.3.4`
+- `v1.3.2`
 
 Older releases remain available so users can access previous versions when needed.
 
