@@ -1,0 +1,93 @@
+name: Release checksums
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Release tag to process (for example: v1.3.5)"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  checksums:
+    name: Generate and upload checksum files
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download release assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ inputs.tag }}
+        run: |
+          set -euo pipefail
+          rm -rf assets
+          mkdir assets
+          gh release download "$TAG" --repo "$GITHUB_REPOSITORY" --dir assets --clobber
+
+          # Remove checksum artifacts from previous runs so they are not re-hashed.
+          find assets -type f \( -name '*.sha256' -o -name 'SHA256SUMS.txt' -o -name 'release-manifest.json' \) -delete
+
+          count=$(find assets -maxdepth 1 -type f | wc -l)
+          if [ "$count" -eq 0 ]; then
+            echo "::error::Release $TAG has no assets to checksum."
+            exit 1
+          fi
+          echo "Downloaded $count asset(s):"
+          ls -1 assets
+
+      - name: Generate checksum files
+        env:
+          TAG: ${{ inputs.tag }}
+        run: |
+          set -euo pipefail
+          cd assets
+
+          file_list=$(find . -maxdepth 1 -type f ! -name '*.sha256' ! -name 'SHA256SUMS.txt' ! -name 'release-manifest.json' -printf '%f\n' | LC_ALL=C sort)
+
+          : > SHA256SUMS.txt
+          while IFS= read -r name; do
+            [ -z "$name" ] && continue
+            sha256sum "$name" >> SHA256SUMS.txt
+            sha256sum "$name" > "$name.sha256"
+          done <<< "$file_list"
+
+          export TAG
+          python3 - <<'PY'
+          import datetime
+          import json
+          import os
+
+          tag = os.environ["TAG"]
+          artifacts = []
+          with open("SHA256SUMS.txt") as fh:
+              for line in fh:
+                  digest, name = line.rstrip("\n").split("  ", 1)
+                  artifacts.append({
+                      "name": name,
+                      "size": os.path.getsize(name),
+                      "sha256": digest,
+                  })
+          manifest = {
+              "release": tag,
+              "algorithm": "SHA-256",
+              "generated_utc": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+              "artifacts": artifacts,
+          }
+          with open("release-manifest.json", "w") as fh:
+              json.dump(manifest, fh, indent=2)
+              fh.write("\n")
+          PY
+
+          echo "--- SHA256SUMS.txt ---"
+          cat SHA256SUMS.txt
+
+      - name: Upload checksum files to the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ inputs.tag }}
+        run: |
+          cd assets
+          gh release upload "$TAG" SHA256SUMS.txt release-manifest.json ./*.sha256 --clobber --repo "$GITHUB_REPOSITORY"
+          echo "Checksum files uploaded to release $TAG (existing checksum files were overwritten)."

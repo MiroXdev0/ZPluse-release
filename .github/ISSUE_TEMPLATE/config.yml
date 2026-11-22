@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Z+ website
+    url: https://zpluse.vercel.app/
+    about: Project website and documentation.
