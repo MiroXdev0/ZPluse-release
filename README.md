@@ -129,6 +129,13 @@ Use the **bug report** issue template when opening an issue, and include:
 
 Please avoid posting passwords, private tokens, or other sensitive information.
 
+## Maintainer Tools
+
+Checksum files for a release are generated in one of two ways:
+
+- **Locally:** run `tools/New-Checksums.ps1 -Path <directory with the release assets> -ReleaseTag <tag>`. It writes one `<name>.sha256` sidecar per artifact, `SHA256SUMS.txt`, and `release-manifest.json`, ready to upload alongside the installer.
+- **On GitHub:** run the **Release checksums** workflow (**Actions → Release checksums → Run workflow**) with a tag such as `v1.3.5`. The workflow recomputes checksums from the published release assets and uploads them to the release, overwriting any existing checksum files.
+
 ## License
 
 Licensing terms are defined by the Z+ project and the license files included with each applicable distribution.
